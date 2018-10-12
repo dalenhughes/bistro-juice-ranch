@@ -496,7 +496,6 @@ CustomOrder.Packages = React.createClass({
         return group.Name == packageOption["Group" + (i + 1)];
       };
       var packageLength = packageOption.Length;
-      console.log("packageLength", packageLength);
       for (i = 0; i < packageLength; i++) {
         var groupDetails = _.find(self.props.data.groups, predicate);
         var styles = {
