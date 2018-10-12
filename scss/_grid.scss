@@ -1,0 +1,75 @@
+/* Responsive Grid
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+// grid variables
+$grid-columns: 12;
+$grid-max-width: 65em;
+
+// breakpoints
+$breakpoint-small: "only screen and (min-width: 35em)";
+$breakpoint-medium: "only screen and (min-width: 62em)";
+
+%clearfix {
+    *zoom: 1;
+    &:before, 
+    &:after {
+        content: " ";
+        display: table;
+    }
+    &:after {
+        clear: both;
+    }
+}
+
+*, *:after, *:before {
+	margin: 0;
+	padding: 0;
+	@include border-box;
+}
+	 
+img {
+	width: auto;
+	max-width: 100%;
+	height: auto !important; 
+}   
+ 
+.mw-wrapper {
+	width: 100%;
+	margin: 0 auto;
+}
+ 
+.mw-wrapper, .mw-row {
+	@extend %clearfix;
+}
+	  
+[class*='column-'] {
+	float: left;
+	padding: 0em;
+	width: 100%;
+	min-height: 1px; 
+}
+ 
+@media #{$breakpoint-small} {
+	.mw-wrapper {
+		width: 95%;
+		max-width: $grid-max-width;
+		}
+	@for $i from 1 through $grid-columns {	 
+		.column-small-#{$i} {		
+			width: 100% / $grid-columns * $i;   
+			}		   
+		}   
+}
+
+@media #{$breakpoint-medium} {
+	.mw-wrapper {
+		width: 95%;
+		max-width: $grid-max-width;
+		}
+	@for $i from 1 through $grid-columns {	 
+		.column-medium-#{$i} {		
+			width: 100% / $grid-columns * $i;   
+			}		   
+		}   
+}
+
