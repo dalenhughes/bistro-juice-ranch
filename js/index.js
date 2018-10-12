@@ -207,7 +207,7 @@ CustomOrder.Order = React.createClass({
     var orderDescription =
       "Package: " +
       self.props.data.packages[self.state.currentPackage].Name +
-      "\n\nJuice Selections2\n\n";
+      "\n\nJuice Selections\n\n";
     _.each(self.state.juiceSelections, function(juiceDay, dayIndex) {
       orderDescription += "Day " + (dayIndex + 1) + ": ";
       var juiceList = [];
@@ -568,6 +568,7 @@ CustomOrder.Packages = React.createClass({
         )
       );
     });
+    console.log("package Options", packageOptions);
     return React.createElement(
       "div",
       { className: "Packages step-view" },
