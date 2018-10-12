@@ -615,6 +615,7 @@ CustomOrder.Customize = React.createClass({
 
   render: function() {
     var self = this;
+    console.log("mapping", this.props.juiceSelections);
     var dayViews = _.map(this.props.juiceSelections, function(
       dayJuices,
       index
