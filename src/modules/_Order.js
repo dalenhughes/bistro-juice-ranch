@@ -281,7 +281,7 @@ CustomOrder.Packages = React.createClass({
 				packageBackgroundStyle = {}
 			var predicate = function (group) { return group.Name == packageOption["Group" + (i+1)] }
 			var packageLength = packageOption.Length
-			console.log('packageLenth', packageLenth)
+			console.log('packageLength', packageLength)
 			for (i=0; i < packageLength; i++) {
 				var groupDetails = _.find(self.props.data.groups, predicate)
 				var styles = {
