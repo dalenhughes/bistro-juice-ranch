@@ -144,7 +144,7 @@ CustomOrder.Order = React.createClass({
       );
     };
     var packageLength = self.props.data.packages[packageID].Length;
-    console.log("packageLength", packageLength);
+    console.log("packageLength for make package", packageLength);
 
     for (dayIndex = 0; dayIndex < days; dayIndex++) {
       var dayJuices = [];
@@ -496,6 +496,7 @@ CustomOrder.Packages = React.createClass({
         return group.Name == packageOption["Group" + (i + 1)];
       };
       var packageLength = packageOption.Length;
+      console.log("packageLength CustomOrder Packages", packageLength);
       for (i = 0; i < packageLength; i++) {
         var groupDetails = _.find(self.props.data.groups, predicate);
         var styles = {
