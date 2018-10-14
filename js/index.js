@@ -144,6 +144,8 @@ CustomOrder.Order = React.createClass({
       );
     };
     var packageLength = self.props.data.packages[packageID].Length;
+    console.log("packageLength for make package", packageLength);
+
     for (dayIndex = 0; dayIndex < days; dayIndex++) {
       var dayJuices = [];
       for (juiceIndex = 1; juiceIndex <= packageLength; juiceIndex++) {
