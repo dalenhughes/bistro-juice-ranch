@@ -46,7 +46,6 @@ CustomOrder.Order = React.createClass({
       );
     };
     var packageLength = self.props.data.packages[packageID].Length;
-    console.log("packageLength in makePackage", packageLength);
 
     for (dayIndex = 0; dayIndex < days; dayIndex++) {
       var dayJuices = [];
@@ -55,7 +54,6 @@ CustomOrder.Order = React.createClass({
       }
       juiceSelections[dayIndex] = dayJuices;
     }
-    console.log("juiceSelections", juiceSelections);
 
     return juiceSelections;
   },
@@ -110,7 +108,7 @@ CustomOrder.Order = React.createClass({
     var orderDescription =
       "Package: " +
       self.props.data.packages[self.state.currentPackage].Name +
-      "\n\nJuice Selections2\n\n";
+      "\n\nJuice Selections\n\n";
     _.each(self.state.juiceSelections, function(juiceDay, dayIndex) {
       orderDescription += "Day " + (dayIndex + 1) + ": ";
       var juiceList = [];
@@ -433,6 +431,11 @@ CustomOrder.Packages = React.createClass({
           <div className="package-options mw-row">{packageOptions}</div>
           <div className="group-legend">{groups}</div>
         </main>
+        <footer>
+          <button onClick={this.props.nextStep}>
+            Next Customize Juices <i className="icon mk-moon-arrow-right-6" />
+          </button>
+        </footer>
       </div>
     );
   }

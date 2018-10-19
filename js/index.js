@@ -144,7 +144,6 @@ CustomOrder.Order = React.createClass({
       );
     };
     var packageLength = self.props.data.packages[packageID].Length;
-    console.log("packageLength for make package", packageLength);
 
     for (dayIndex = 0; dayIndex < days; dayIndex++) {
       var dayJuices = [];
@@ -496,6 +495,7 @@ CustomOrder.Packages = React.createClass({
         return group.Name == packageOption["Group" + (i + 1)];
       };
       var packageLength = packageOption.Length;
+
       for (i = 0; i < packageLength; i++) {
         var groupDetails = _.find(self.props.data.groups, predicate);
         var styles = {
@@ -589,6 +589,16 @@ CustomOrder.Packages = React.createClass({
           packageOptions
         ),
         React.createElement("div", { className: "group-legend" }, groups)
+      ),
+      React.createElement(
+        "footer",
+        null,
+        React.createElement(
+          "button",
+          { onClick: this.props.nextStep },
+          "Next Customize Juices ",
+          React.createElement("i", { className: "icon mk-moon-arrow-right-6" })
+        )
       )
     );
   }
@@ -614,7 +624,6 @@ CustomOrder.Customize = React.createClass({
 
   render: function() {
     var self = this;
-    console.log("mapping", this.props.juiceSelections);
     var dayViews = _.map(this.props.juiceSelections, function(
       dayJuices,
       index
@@ -855,7 +864,6 @@ CustomOrder.Customize.Juice = React.createClass({
     );
   }
 });
-
 CustomOrder.Summary = React.createClass({
   displayName: "Summary",
 

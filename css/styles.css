@@ -467,19 +467,23 @@ img {
 }
 .mw-custom-order .Order .Customize .DayViews .day-enter.day-enter-active {
   opacity: 1;
-  transition: opacity 500ms ease-in;
+  -webkit-transition: opacity 500ms ease-in;
+          transition: opacity 500ms ease-in;
 }
 .mw-custom-order .Order .Customize .DayViews .day-leave {
   opacity: 1;
   position: absolute;
   left: 0;
   top: 0;
-  transform: translate3d(0, 0, 0);
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
 }
 .mw-custom-order .Order .Customize .DayViews .day-leave.day-leave-active {
   opacity: 0.01;
-  transform: translate3d(-100%, 0, 0);
-  transition: opacity 300ms ease-in, transform 300ms ease-in;
+  -webkit-transform: translate3d(-100%, 0, 0);
+          transform: translate3d(-100%, 0, 0);
+  -webkit-transition: opacity 300ms ease-in, -webkit-transform 300ms ease-in;
+          transition: opacity 300ms ease-in, transform 300ms ease-in;
 }
 .mw-custom-order .Order .Customize .Juice {
   position: relative;
@@ -511,13 +515,15 @@ img {
   display: block;
   position: absolute;
   opacity: 0;
-  transition: opacity 100ms ease-in;
+  -webkit-transition: opacity 100ms ease-in;
+          transition: opacity 100ms ease-in;
   visibility: hidden;
   margin: 0 auto;
   padding: 10px;
   top: 150px;
   left: 50%;
-  transform: translate(-50%, 0%);
+  -webkit-transform: translate(-50%, 0%);
+          transform: translate(-50%, 0%);
   background-color: #fff;
   line-height: 1.45em;
   font-weight: 700;
